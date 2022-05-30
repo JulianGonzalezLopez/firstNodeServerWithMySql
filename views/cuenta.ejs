@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Cuenta de <%= resInfo.userInfo.username %></h2>
+    <ul>
+        <% resInfo.todosInfo.forEach(todo=>{%>
+            
+            
+            <div class="modify">
+                <p><%= todo.todo %></p>
+                <input type="text" required>
+                <button class="modify-button" data-id_usuario=<%= todo.created_by_id%> data-id=<%= todo.todo_id%> >Modificar todo</button>
+                <button class="delete" data-id_usuario=<%= todo.created_by_id%> data-id=<%= todo.todo_id%> >Eliminar todo</button>
+            </div>
+            
+        <% }) %>
+    </ul>
+    <form action="/create-todo" method="POST">
+        <label for="newTodo">Agregar Todo</label>
+        <input type="text" name="newTodo" required>
+        <input type="hidden" name="id-usuario" value=<%= resInfo.userInfo.id%> required>
+        <input type="submit">
+    </form>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

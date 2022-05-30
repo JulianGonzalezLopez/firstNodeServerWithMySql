@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<main>
+    <h1>Hello! Welcome to TO-DO</h1>
+    <h4>Login</h4>
+    <form id="login" class="hidden" method="GET" action="/login">
+        <input name="username" type="text" placeholder="User name" required>
+        <input name="password" type="password" placeholder="password" required>
+        <input type="submit">
+    </form>
+    
+    <h4>Create account</h4>
+    <form id="create" method="POST" action="/create-user">
+        <input type="text" name="username" placeholder="User name" required>
+        <input type="password" name="password" placeholder="password" required>
+        <input type="submit">
+    </form>
+</main>
+
+</body>
+</html>
